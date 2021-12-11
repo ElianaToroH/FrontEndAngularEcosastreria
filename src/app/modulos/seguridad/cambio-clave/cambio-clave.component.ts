@@ -29,6 +29,7 @@ export class CambioClaveComponent implements OnInit {
       
     this.servicioSeguridad.CambiarClave(usuario).subscribe((datos: ModeloCambiarClave) => {
       alert("Clave cambiada correctamente");
+      this.servicioSeguridad.EliminarInformacionSesion();
       this.router.navigate(["/seguridad/identificar"]);
     }, (error: any) => {
       alert("Error al cambiar clave");
