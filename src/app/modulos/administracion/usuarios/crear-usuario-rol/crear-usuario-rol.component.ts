@@ -4,21 +4,18 @@ import { Router } from '@angular/router';
 import { ModeloUsuario } from 'src/app/modelos/usuario.modelo';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 
-
 @Component({
-  selector: 'app-crear-usuario',
-  templateUrl: './crear-usuario.component.html',
-  styleUrls: ['./crear-usuario.component.css']
+  selector: 'app-crear-usuario-rol',
+  templateUrl: './crear-usuario-rol.component.html',
+  styleUrls: ['./crear-usuario-rol.component.css']
 })
-export class CrearUsuarioComponent implements OnInit {
+export class CrearUsuarioRolComponent implements OnInit {
 
   fgValidador: FormGroup = this.fb.group({
+    'rol': ['',[Validators.required]],
     'nombre': ['',[Validators.required]],
-    'correo': ['',[Validators.required]],
-    /*'id': ['',[Validators.required]],
-    'rol': ['',[Validators.required]],*/
+    'correo': ['',[Validators.required]],    
   });
-
 
   constructor(private fb: FormBuilder, 
     private  servicioUsuario: UsuarioService,
@@ -27,21 +24,19 @@ export class CrearUsuarioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  GuardarUsuario(){
-    /*let id = this.fgValidador.controls["id"].value;*/
+  GuardarUsuario(){    
+    let rol = this.fgValidador.controls["rol"].value;
     let nombre = this.fgValidador.controls["nombre"].value;
     let correo = this.fgValidador.controls["correo"].value;
-    /*let rol = this.fgValidador.controls["rol"].value;*/
-    let p = new ModeloUsuario();
+    let p = new ModeloUsuario();    
+    p.rol = rol;
     p.nombre = nombre;
     p.correo = correo;
-    /*p.id = id;
-    p.rol = rol;*/
     this.servicioUsuario.CrearUsuario(p).subscribe((datos: ModeloUsuario)=> {
-      alert("Usuario creado correctamente");
-      this.router.navigate(["/seguridad/identificar"]);
+      alert("Rol del usuario creado correctamente");
+      this.router.navigate(["/administracion/listar-usuario"]);
     }, (error: any) => {
-      alert("Error al crear el usuario");
+      alert("Error al crear el rol del usuario");
     })
   }
 

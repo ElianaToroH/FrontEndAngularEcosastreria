@@ -1,1 +1,34 @@
-<p>buscar-usuario works!</p>
+<div class="jumbotron text-center">
+    <h1>ECO SASTRERÍA</h1>    
+  </div>
+
+  <div class="container-fluid bg-grey">
+    <div class="container">
+        <h2 class="text-center">Lista de ususarios</h2>
+    <table class="table text-center table-bordered">
+        <thead class="panel panel-default text-ceenter">
+        <tr>
+       <th>Nombre</th>
+        <th>Correo</th>
+       <th>Rol</th>        
+       <th>Editar</th>
+    </tr>
+    </thead>
+    <tbody class="panel panel-default text-ceenter">
+        <tr *ngFor="let p of listadoRegistros">
+            <td>
+                {{p.nombre}}
+            </td>
+            <td>
+                {{p.correo}}
+            </td>
+            <td>
+                {{p.rolId}}
+            </td>
+            
+            <td>
+                <button routerLink="/administracion/editar-usuario/{{p.id}}" class="btn btn-primary">Editar Usuario</button>
+            </td>
+        </tr>  
+    </tbody>
+</table>

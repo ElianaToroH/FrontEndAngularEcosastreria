@@ -1,1 +1,33 @@
-<p>editar-usuario works!</p>
+<div class="jumbotron text-center">
+    <h1>ECO SASTRERÍA</h1>
+</div>
+
+<div class="panel panel-default">
+    <h2 class="center-align">Editar Usuarios</h2>
+    <article class="col s6 offset-s3">
+
+        <form [formGroup]="fgValidador" (ngSubmit)="EditarUsuario()" method="POST" action="formulario-contacto.php">
+            <input type="hidden" formControlName="id" />
+            <div class="input-field">
+                <label for="nombre" class="active">Nombre</label>
+                <input formControlName="nombre" type="text" name="nombre" required>
+            </div>
+            <div class="input-field">
+                <label for="correo">correo</label>
+                <input formControlName="correo" type="text" name="correo" required>
+            </div>
+            <div class="input-field">
+                <label for="rol">rol</label>
+                <input formControlName="rol" type="text" name="rol" required>
+            </div>
+            <div class="input-field">
+                <label for="id">id</label>
+                <input formControlName="id" type="text" name="id" required>
+            </div>
+            <p class="center-align">
+                <button [disabled]="!fgValidador.valid" class="waves-effect waves-light btn" type="submit"><i
+                        class="material-icons right">send</i>Enviar</button>
+            </p>
+        </form>
+    </article>
+</div>

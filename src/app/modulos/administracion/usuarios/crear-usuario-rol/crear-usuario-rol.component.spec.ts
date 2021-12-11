@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RecuperarClaveComponent } from './recuperar-clave.component';
+import { CrearUsuarioRolComponent } from './crear-usuario-rol.component';
 
-describe('RecuperarClaveComponent', () => {
-  let component: RecuperarClaveComponent;
-  let fixture: ComponentFixture<RecuperarClaveComponent>;
+describe('CrearUsuarioRolComponent', () => {
+  let component: CrearUsuarioRolComponent;
+  let fixture: ComponentFixture<CrearUsuarioRolComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RecuperarClaveComponent ]
+      declarations: [ CrearUsuarioRolComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RecuperarClaveComponent);
+    fixture = TestBed.createComponent(CrearUsuarioRolComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

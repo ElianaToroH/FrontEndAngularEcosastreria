@@ -9,7 +9,7 @@ import { ModeloIdentificar } from '../modelos/identificar.modelo';
 })
 export class SeguridadService {
   url = 'http://localhost:3000'
-  datosUsuarioEnSesion= new BehaviorSubject<ModeloIdentificar>(new ModeloIdentificar());
+  datosUsuarioEnSesion= new BehaviorSubject<ModeloIdentificar>(new ModeloIdentificar()); 
   constructor(private http: HttpClient) {this.VerificarSesionActual() }
   
   VerificarSesionActual(){
@@ -30,7 +30,6 @@ export class SeguridadService {
       contrasena: clave
     }, {
       headers: new HttpHeaders({
-
       })
     });
   }
@@ -73,12 +72,11 @@ export class SeguridadService {
  }
 
  CambiarClave(usuario: string, clave: string): Observable<ModeloCambiarClave> {
-  return this.http.put<ModeloCambiarClave>(`${this.url}/cambiarclave`, {
+  return this.http.put<ModeloCambiarClave>(`${this.url}/cambioclave`, {
     usuario: usuario,
     contrasena: clave
   }, {
     headers: new HttpHeaders({
-
     })
   });
 }

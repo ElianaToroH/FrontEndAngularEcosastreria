@@ -2,11 +2,11 @@
     <h1>ECO SASTRERÍA</h1>    
   </div>
 
-
-<button routerLink="/administracion/crear-producto" class="btn btn-primary">Nuevo producto</button>
-
-<table class="table responsive">
-    <thead>
+<div class="container-fluid bg-grey">
+<div class="container">
+    <h2 class="text-center">Catálogo de productos</h2>
+<table class="table text-center table-bordered">
+    <thead class="panel panel-default text-ceenter">
         <tr>
         <th>Nombre</th>
         <th>Talla</th>
@@ -16,7 +16,7 @@
         <th>Editar</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody class="panel panel-default text-ceenter">
         <tr *ngFor="let p of listadoRegistros">
             <td>
                 {{p.nombre}}
@@ -40,3 +40,9 @@
         </tr>
     </tbody>
 </table>
+</div>
+
+<div class="container">
+    <button routerLink="/administracion/crear-producto" class="btn btn-primary">Nuevo producto</button>
+    </div>
+</div>

@@ -14,6 +14,7 @@ import { ActualizarUsuarioComponent } from './usuarios/actualizar-usuario/actual
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     CrearProductoComponent,
@@ -24,7 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditarUsuarioComponent,
     EliminarUsuarioComponent,
     BuscarUsuarioComponent,
-    ActualizarUsuarioComponent
+    ActualizarUsuarioComponent,    
   ],
   imports: [
     CommonModule,

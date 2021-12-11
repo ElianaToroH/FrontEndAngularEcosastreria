@@ -10,21 +10,30 @@ import * as cryptoJs from 'crypto-js';
   styleUrls: ['./identificacion.component.css']
 })
 export class IdentificacionComponent implements OnInit {
-fgValidador : FormGroup = this.fb.group({
+fgValidator : FormGroup = this.fb.group({
   'usuario': ['', [Validators.required, Validators.email]],
-  'clave': ['',[Validators.required]]
+  'clave': ['',[Validators.required]], 
+  recaptcha: ['', Validators.required] 
 });
 
-  constructor(private fb: FormBuilder, private servicioSeguridad : SeguridadService,
-    private router : Router) { }
+   
+   sitekey: string;
+   language: string;
 
+  constructor(private fb: FormBuilder, private servicioSeguridad : SeguridadService,
+    private router : Router) { 
+      this.sitekey = '6Lef0JUdAAAAAP4_ViPT3bnJ5SZU3lUAinBmHnhY';
+      this.language = 'es';
+    }
+    
   ngOnInit(): void {
+     this.fgValidator
   }
-  
+
   IdentificarUsuario(){
-    let usuario = this.fgValidador.controls["usuario"].value;
-    let clave = this.fgValidador.controls["clave"].value;
-    let claveCifrada = cryptoJs.MD5(clave).toString();
+    let usuario = this.fgValidator.controls["usuario"].value;
+    let clave = this.fgValidator.controls["clave"].value;
+    let claveCifrada = cryptoJs.MD5(clave).toString();    
     this.servicioSeguridad.Identificar(usuario, claveCifrada).subscribe((datos:any)=>{this.servicioSeguridad.AlmacenarSesion(datos);
       this.router.navigate(['/inicio'])},
     (error:any)=>{alert('datos invalidos')}

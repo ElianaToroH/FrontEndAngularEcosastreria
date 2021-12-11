@@ -1,0 +1,258 @@
+
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .jumbotron {
+    background-color: #33b950;
+    color: rgb(255, 255, 255);
+    padding: 35px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #33b950;
+    font-size: 50px;
+  }
+  .logo {
+    color: #33b950;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+    border-radius: 1.5%;
+  }
+  .carousel-control.right,
+  .carousel-control.left {
+    background-image: none;
+    color: #33b950;
+  }
+  .carousel-indicators li {
+    border-color: #33b950;
+  }
+  .carousel-indicators li.active {
+    background-color: #33b950;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #33b950;
+    border-radius: 0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0, 0, 0, 0.2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #33b950;
+    background-color: #fff !important;
+    color: #33b950;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #33b950 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #33b950;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #33b950;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a,
+  .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover,
+  .navbar-nav li.active a {
+    color: #33b950 !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #33b950;
+  }
+  .slideanim {
+    visibility: hidden;
+  }
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2)
+      format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+      U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2)
+      format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2)
+      format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+      U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2)
+      format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+      U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+      U+FEFF, U+FFFD;
+  }
+  
+  /* latin-ext */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2)
+      format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+      U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjx4wXg.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+      U+FEFF, U+FFFD;
+  }
+  

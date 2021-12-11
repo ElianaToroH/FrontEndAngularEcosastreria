@@ -24,6 +24,10 @@ export class BarraNavegacionComponent implements OnInit {
         this.SeInicioSesionAdmint=datos.estaIdentificado;
       }else if(datos.datos?.rol==='61988a4be16c2037c8dc3340'){
         this.SeInicioSesionTrabajador=datos.estaIdentificado;
+      } else {
+        this.SeInicioSesionCliente=datos.estaIdentificado;
+        this.SeInicioSesionAdmint=datos.estaIdentificado;
+        this.SeInicioSesionTrabajador=datos.estaIdentificado;
       }
     })
   }   

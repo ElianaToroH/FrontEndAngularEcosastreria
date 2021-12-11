@@ -1,0 +1,38 @@
+<div class="jumbotron text-center">
+  <h1>ECO SASTRERÍA</h1>
+</div>
+
+<div class="container-fluid bg-grey">
+
+  <h2 class="text-center">Asignar rol a usario</h2>
+
+  <form (ngSubmit)="GuardarUsuario()" method="POST" action="formulario-contacto.php">
+
+    <div class="col-md-1 offset-md-1"></div>
+    <div class="form-group col-md-3">
+      <label class="control-label" for="Nombre">Nombre *</label>
+      <input formControlName="nombre" type="text" name="nombre" placeholder="Ingrese su nombre" type="text"
+        class="form-control " required>
+    </div>
+
+    <div class="form-group col-md-3">
+      <label class="control-label" for="correo">Correo elétronico * </label>
+      <input formControlName="correo" type="text" name="correo" placeholder="Ingrese su correo electrónico"
+        class="form-control" required>
+    </div>
+
+
+    <div class="form-group col-md-4">
+      <label class="control-label" for="rol">Rol * </label>
+      <input formControlName="rol" type="text" name="rol" placeholder="Ingrese el rol a asignar" class="form-control"
+        required>
+    </div>
+
+    <div class="col-md-5 offset-md-2"></div>
+
+    <p class="form-group col-md-4">
+      <button class="btn btn-primary" type="submit">Enviar</button>
+    </p>
+
+  </form>
+</div>

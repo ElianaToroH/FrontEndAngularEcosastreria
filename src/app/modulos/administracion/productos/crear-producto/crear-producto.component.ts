@@ -25,10 +25,30 @@ export class CrearProductoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /*GuardarProducto(){
+    let nombre = this.fgValidator.controls["nombre"].value;
+    let talla = this.fgValidator.controls["talla"].value;
+    let precio = parseInt(this.fgValidator.controls["precio"].value);
+    let estado = this.fgValidator.controls["estado"].value;
+    let descripcion = this.fgValidator.controls["descripcion"].value;
+    let p = new ModeloProducto();
+    p.nombre = nombre;
+    p.talla = talla;
+    p.precio = precio;
+    p.estado = estado;
+    p.descripcion = descripcion;
+    this.servicioProducto.CrearProducto(p).subscribe((datos: ModeloProducto) => {
+      alert("Producto almacenado correctamente");
+      this.router.navigate(["/administracion/listar-productos"]);
+    }, (error: any) => {
+      alert("Error almacenado el producto");
+    })
+  }*/
+
   GuardarProducto(){
     let nombre = this.fgValidator.controls["nombre"].value;
     let talla = this.fgValidator.controls["talla"].value;
-    let precio = this.fgValidator.controls["precio"].value;
+    let precio = parseInt(this.fgValidator.controls["precio"].value);
     let estado = this.fgValidator.controls["estado"].value;
     let descripcion = this.fgValidator.controls["descripcion"].value;
     let p = new ModeloProducto();

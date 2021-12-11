@@ -1,5 +1,62 @@
 <div class="jumbotron text-center">
-    <h1>ECO SASTRERÍA</h1>    
-  </div>
+  <h1>ECO SASTRERÍA</h1>    
+</div>
 
-<p>editar-producto works!</p>
+<div id="Productos" class="container-fluid bg-grey">
+  <h2 class="text-center">Actualizar producto</h2>
+  <form [formGroup]="fgValidator" (ngSubmit)="EditarProducto()" action="/Contacto/Contacto" enctype="multipart/form-data" method="post"><input name="__RequestVerificationToken" type="hidden" value="F6mSyoU6vujxpWY2BRItZrQdH4tX7pvSAS0Vv8Z72bpvHpuVdA-zoyhHWFwKygfT0V1_De_bJssXo02S0lWAZ05OqE6-xPfPiXv318MgTzM1"  class="row g-3 needs-validation">        
+        <input type="hidden" formControlName="id">
+    <div class="form-row">  
+            
+    <div class="form-group col-md-6">
+      <label class="control-label" for="Nombre">Nombre Producto *</label> 
+      <input formControlName="nombre" id="NombreProducto" name="NombreProducto" type="text" class="form-control" required placeholder="NombreProducto">                                             
+    </div>        
+      
+      <div class="form-group col-md-6">
+          <label class="control-label" for="Estado">Estado *</label>
+          <select  formControlName="estado" class="form-control" data-val="true" required id="Estado" name="Estado"><option value="">Seleccione</option>
+              <option value="0">No disponible</option>
+              <option value="1">Disponible</option>                                
+         </select>
+          <span class="field-validation-valid text-danger" data-valmsg-for="Estado" data-valmsg-replace="true"></span>
+      </div>  
+                              
+      <div class="form-group col-md-6">
+          <label class="control-label" for="Talla">Talla *</label>
+          <select formControlName="talla" class="form-control" data-val="true" required id="Talla" name="Talla"><option value="">Seleccione</option>
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="O">Otro</option>
+          </select>
+          <span class="field-validation-valid text-danger" data-valmsg-for="Talla" data-valmsg-replace="true"></span>
+      </div>                              
+               
+      <div class="form-group col-md-6">
+        <label class="control-label" for="Precio">Precio *</label>
+        <input  formControlName="precio" id="Precio" name="Precio" type="text" class="form-control" required placeholder="Precio">           
+      
+        <span class="field-validation-valid text-danger" data-valmsg-for="Precio" data-valmsg-replace="true"></span>
+    </div> 
+
+      <div id="descripcionRow" class="form-row">
+      <div class="form-group col-md-6">
+          <label class="control-label" for="descripcion">Descripción *</label>
+          <textarea  formControlName="descripcion" class="form-control" cols="40" data-val="true" data-val-length="longitud máxima de 200 caracteres" data-val-length-max="200" id="descripcion" name="descripcion" placeholder="Descripción" rows="7" required>
+          </textarea>
+          <span class="field-validation-valid text-danger" data-valmsg-for="descripcion" data-valmsg-replace="true"></span>
+      </div>
+      </div>                              
+      <div class="form-group col-md-6">
+      <button [disabled]="!fgValidator.valid" class="btn btn-primary" type="submit">
+        Actualizar
+      </button>
+    </div>     
+
+   </div>
+
+  </form>     
+</div>

@@ -2,5 +2,5 @@ export class ModelosDatos{
     id?: string;
     nombre? : string;
     correo?: string;
-    rol?: string
+    rol?: string;    
 }
