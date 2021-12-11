@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
-import * as cryptoJs from 'crypto-js';
 import { ModeloCambiarClave } from 'src/app/modelos/cambiarClave.modelo';
-import { ModeloUsuario } from 'src/app/modelos/usuario.modelo';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
@@ -14,8 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CambioClaveComponent implements OnInit {
   fgValidator : FormGroup = this.fb.group({
-    'usuario': ['', [Validators.required, Validators.email]],
-    'clave': ['',[Validators.required]]
+    'usuario': ['', [Validators.required, Validators.email]]
   });
 
  
@@ -28,11 +25,9 @@ export class CambioClaveComponent implements OnInit {
   }
 
   CambiarClave(){
-    let usuario = this.fgValidator.controls["ususario"].value;
-    let clave = this.fgValidator.controls["clave"].value;
-    let claveCifrada = cryptoJs.MD5(clave).toString();
+    let usuario = this.fgValidator.controls["usuario"].value;
       
-    this.servicioSeguridad.CambiarClave(usuario, claveCifrada).subscribe((datos: ModeloCambiarClave) => {
+    this.servicioSeguridad.CambiarClave(usuario).subscribe((datos: ModeloCambiarClave) => {
       alert("Clave cambiada correctamente");
       this.router.navigate(["/seguridad/identificar"]);
     }, (error: any) => {

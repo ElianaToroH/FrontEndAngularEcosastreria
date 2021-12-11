@@ -71,12 +71,12 @@ export class SeguridadService {
     }
  }
 
- CambiarClave(usuario: string, clave: string): Observable<ModeloCambiarClave> {
-  return this.http.put<ModeloCambiarClave>(`${this.url}/cambioclave`, {
-    usuario: usuario,
-    contrasena: clave
+ CambiarClave(usuario: string): Observable<ModeloCambiarClave> {
+  return this.http.put<ModeloCambiarClave>(`${this.url}/cambiarComtrasena`, {
+    usuario: usuario
   }, {
     headers: new HttpHeaders({
+
     })
   });
 }

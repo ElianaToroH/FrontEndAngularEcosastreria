@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "52adc574-a905-47af-a09c-73026e236e94"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -35,7 +38,6 @@
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/bootstrap/js/apariencia.js"
-              /*"node_modules/bootstrap/js/captcha.js"*/
             ]
           },
           "configurations": {

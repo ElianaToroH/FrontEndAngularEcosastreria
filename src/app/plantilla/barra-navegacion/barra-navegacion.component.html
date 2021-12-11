@@ -14,7 +14,7 @@
           <li *ngIf=" SeInicioSesionAdmint || SeInicioSesionTrabajador"><a routerLink="/administracion/listar-usuario">USUARIOS</a></li>     
           <li *ngIf=" SeInicioSesionAdmint "><a routerLink="/administracion/crear-usuario-rol">ROLES</a></li>       
           <li *ngIf="SeInicioSesionCliente || SeInicioSesionAdmint || SeInicioSesionTrabajador"><a routerLink="/administracion/listar-productos">PRODUCTOS</a></li>        
-          <li *ngIf="SeInicioSesionCliente || SeInicioSesionAdmint || SeInicioSesionTrabajador"><a routerLink="/seguridad/cambioClave">CAMBIAR CLAVE</a></li>
+          <li *ngIf="SeInicioSesionCliente || SeInicioSesionAdmint || SeInicioSesionTrabajador"><a routerLink="/seguridad/cambiarClave">CAMBIAR CLAVE</a></li>
           <li *ngIf="!SeInicioSesionCliente && !SeInicioSesionAdmint && !SeInicioSesionTrabajador"><a routerLink="/seguridad/identificar">INICIO SESIÓN</a></li>
           <li *ngIf="SeInicioSesionCliente || SeInicioSesionAdmint || SeInicioSesionTrabajador"> <a routerLink="/seguridad/cerrarSesion">CERRAR SESIÓN</a></li>
           
