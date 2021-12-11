@@ -14,9 +14,7 @@ export class CambioClaveComponent implements OnInit {
   fgValidator : FormGroup = this.fb.group({
     'usuario': ['', [Validators.required, Validators.email]]
   });
-
  
-
   constructor(private fb: FormBuilder, private servicioSeguridad : SeguridadService,
     private router : Router) { }
 
