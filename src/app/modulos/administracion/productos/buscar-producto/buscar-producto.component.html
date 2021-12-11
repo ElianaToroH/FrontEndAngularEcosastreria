@@ -1,0 +1,42 @@
+<div class="jumbotron text-center">
+    <h1>ECO SASTRERÍA</h1>    
+  </div>
+
+
+<button routerLink="/administracion/crear-producto" class="btn btn-primary">Nuevo producto</button>
+
+<table class="table responsive">
+    <thead>
+        <tr>
+        <th>Nombre</th>
+        <th>Talla</th>
+        <th>Precio</th>
+        <th>Descripción</th>
+        <th>Estado</th>
+        <th>Editar</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoRegistros">
+            <td>
+                {{p.nombre}}
+            </td>
+            <td>
+                {{p.talla}}
+            </td>
+            <td>
+                {{p.precio}}
+            </td>
+            <td>
+                {{p.descripcion}}
+            </td>
+            <td>
+                {{p.estado}}
+            </td>
+            <td>
+                <button routerLink="/administracion/editar-producto/{{p.id}}" class="btn btn-primary">Editar producto</button>
+               
+            </td>            
+        </tr>
+    </tbody>
+</table>

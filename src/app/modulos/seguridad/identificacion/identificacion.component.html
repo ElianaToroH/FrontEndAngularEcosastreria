@@ -1,0 +1,70 @@
+<div class="jumbotron text-center">
+    <h1>ECO SASTRERÍA</h1>    
+  </div>
+
+<div class="container-fluid bg-grey">    
+    <div class="abs-center">
+        <div class="card col-md-5 col-lg-offset-4 p-md-5">
+            <h2 class="text-center">INICIO SESIÓN</h2>
+
+            <form [formGroup]="fgValidador" (ngSubmit)="IdentificarUsuario()" class="row g-3 needs-validation">
+                <div class="col-md-6">
+                    <label for="txtCorreo" class="form-label">Correo Electrónico</label>
+                    <div class="input-group has-validation">
+                        <input formControlName="usuario" type="email" class="form-control" id="txtCorreo"
+                            aria-describedby="inputGroupPrepend" placeholder="Ingrese su correo electrónico" />
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="txtContraseña" class="form-label">Contraseña</label>
+                    <div class="input-group has-validation">
+                        <input formControlName="clave" type="password" class="form-control" id="txtContraseña" placeholder="Ingrese su contraseña"/>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+
+                <!--Captcha-->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="pwd">Captcha *</label>
+                        <div class="input-group has-validation">
+                            <div class="captcha-input">
+                                <input type="text" class="form-control" id="captcha-input" required autocomplete="off"
+                                    placeholder="Ingrese el código captcha" />
+                                <span id="errCaptcha"></span>
+                            </div>
+                            <div class="captcha-code">
+                                <div class="code">
+                                    <div class="dynamic-code"></div>
+                                </div>
+                                <div class="captcha-reload">
+                                    <i class="ion-ios-loop-strong"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!---->
+                
+                <div class="col-md-6">
+                    <p>
+                        ¿Aún no tienes cuenta?
+                        <a href="" class="link-info">Registrate aquí</a>
+                    </p>
+                    <P>Olvido su contraseña
+                        <a routerLink="/seguridad/cambioClave">Recuperala aquí</a>
+                    </P>
+                </div>
+
+                <div class="col-md-12 button">
+                    <button [disabled]="!fgValidador.valid" class="btn btn-primary" type="submit">
+                        Iniciar Sesión
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
