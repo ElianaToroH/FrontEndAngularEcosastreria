@@ -14,7 +14,7 @@ export class CrearUsuarioComponent implements OnInit {
 
   fgValidador: FormGroup = this.fb.group({
     'nombre': ['',[Validators.required]],
-    'correo': ['',[Validators.required]],
+    'correo': ['',[Validators.required, Validators.email]],
     /*'id': ['',[Validators.required]],
     'rol': ['',[Validators.required]],*/
   });

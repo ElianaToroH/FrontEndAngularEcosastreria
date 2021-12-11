@@ -2,32 +2,30 @@
     <h1>ECO SASTRERÍA</h1>
 </div>
 
-<div class="panel panel-default">
-    <h2 class="center-align">Editar Usuarios</h2>
-    <article class="col s6 offset-s3">
-
+<div id="Productos" class="container-fluid bg-grey">
+    <h2 class="text-center">Editor usuario</h2>  
         <form [formGroup]="fgValidador" (ngSubmit)="EditarUsuario()" method="POST" action="formulario-contacto.php">
-            <input type="hidden" formControlName="id" />
-            <div class="input-field">
-                <label for="nombre" class="active">Nombre</label>
-                <input formControlName="nombre" type="text" name="nombre" required>
-            </div>
-            <div class="input-field">
-                <label for="correo">correo</label>
-                <input formControlName="correo" type="text" name="correo" required>
-            </div>
-            <div class="input-field">
-                <label for="rol">rol</label>
-                <input formControlName="rol" type="text" name="rol" required>
-            </div>
-            <div class="input-field">
-                <label for="id">id</label>
-                <input formControlName="id" type="text" name="id" required>
-            </div>
-            <p class="center-align">
-                <button [disabled]="!fgValidador.valid" class="waves-effect waves-light btn" type="submit"><i
-                        class="material-icons right">send</i>Enviar</button>
+            <input type="hidden" formControlName="id" />            
+            <div class="form-row">  
+
+            <div class="form-group col-md-6">
+                    <label class="control-label" for="Nombre">Nombre  *</label> 
+                    <input formControlName="nombre" id="Nombre" name="Nombre" type="text" class="form-control" required placeholder="Nombre del usuario">                                             
+            </div>  
+
+            <div class="form-group col-md-6">
+                <label class="control-label" for="Nombre">Correo *</label> 
+                <input formControlName="correo" id="correo" name="correo" type="email" class="form-control" required placeholder="Ingrese el correo electrónico">                                             
+              </div>  
+
+              <div class="form-group col-md-6">
+                <label class="control-label" for="rol">Rol *</label> 
+                <input formControlName="rolId" id="rol" name="rol" type="text" class="form-control" required placeholder="Ingrese un rol">                                             
+              </div>  
+        
+            <p class="form-group col-md-6">
+                <button [disabled]="!fgValidador.valid" class="btn btn-primary" type="submit">Actualizar</button>
             </p>
-        </form>
-    </article>
+        </div>
+    </form>    
 </div>
