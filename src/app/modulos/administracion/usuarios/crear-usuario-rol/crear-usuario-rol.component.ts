@@ -12,7 +12,7 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 export class CrearUsuarioRolComponent implements OnInit {
 
   fgValidador: FormGroup = this.fb.group({
-    'rol': ['',[Validators.required]],
+    'nombreROl': ['',[Validators.required]],
     'nombre': ['',[Validators.required]],
     'correo': ['',[Validators.required]],    
   });
@@ -25,16 +25,16 @@ export class CrearUsuarioRolComponent implements OnInit {
   }
 
   GuardarUsuario(){    
-    let rol = this.fgValidador.controls["rol"].value;
+    let nombreROl = this.fgValidador.controls["nombreROl"].value;
     let nombre = this.fgValidador.controls["nombre"].value;
     let correo = this.fgValidador.controls["correo"].value;
     let p = new ModeloUsuario();    
-    p.rol = rol;
+    p.nombreROl = nombreROl;
     p.nombre = nombre;
     p.correo = correo;
-    this.servicioUsuario.CrearUsuario(p).subscribe((datos: ModeloUsuario)=> {
+    this.servicioUsuario.CrearUsuarioRoles(p).subscribe((datos: ModeloUsuario)=> {
       alert("Rol del usuario creado correctamente");
-      this.router.navigate(["/administracion/listar-usuario"]);
+      this.router.navigate(["/administracion/listar-productos"]);
     }, (error: any) => {
       alert("Error al crear el rol del usuario");
     })

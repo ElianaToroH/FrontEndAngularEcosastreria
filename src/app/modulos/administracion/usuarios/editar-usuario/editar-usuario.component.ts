@@ -17,7 +17,7 @@ export class EditarUsuarioComponent implements OnInit {
     'nombre': ['',[Validators.required]],
     'correo': ['',[Validators.required]],
     'id': ['',[Validators.required]],
-    'rol': ['',[Validators.required]],
+    'nombreROl': ['',[Validators.required]],
   });
 
   constructor(private fb: FormBuilder, 
@@ -35,7 +35,7 @@ export class EditarUsuarioComponent implements OnInit {
       this.fgValidador.controls["id"].setValue(this.id);
       this.fgValidador.controls["nombre"].setValue(datos.nombre);
       this.fgValidador.controls["correo"].setValue(datos.correo);
-      this.fgValidador.controls["rol"].setValue(datos.rol);
+      this.fgValidador.controls["nombreROl"].setValue(datos.nombreROl);
     });
   }
 
@@ -43,11 +43,11 @@ export class EditarUsuarioComponent implements OnInit {
     let nombre = this.fgValidador.controls["nombre"].value;
     let id = (this.fgValidador.controls["id"].value);
     let correo = this.fgValidador.controls["correo"].value;
-    let rol = this.fgValidador.controls["rol"].value;
+    let nombreROl = this.fgValidador.controls["nombreROl"].value;
     let p = new ModeloUsuario();
     p.nombre = nombre;
     p.correo = correo;
-    p.rol = rol;
+    p.nombreROl = nombreROl;
     p.id = this.id;
     this.servicioUsuario.ActualizarUsuario(p).subscribe((datos: ModeloUsuario)=> {
       alert("Usuario actualizado correctamente");

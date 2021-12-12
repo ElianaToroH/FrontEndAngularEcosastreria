@@ -6,7 +6,7 @@
 
   <h2 class="text-center">Crear usarios con rol</h2>
 
-  <form (ngSubmit)="GuardarUsuario()" method="POST" action="formulario-contacto.php">
+  <form   (ngSubmit)="GuardarUsuario()" enctype="multipart/form-data" method="post" >
 
     <div class="col-md-1 offset-md-1"></div>
     <div class="form-group col-md-3">
@@ -18,20 +18,20 @@
     <div class="form-group col-md-3">
       <label class="control-label" for="correo">Correo elétronico * </label>
       <input formControlName="correo" type="text" name="correo" placeholder="Ingrese su correo electrónico"
-        class="form-control" required>
+        class="form-control" required> 
     </div>
 
 
     <div class="form-group col-md-4">
       <label class="control-label" for="rol">Rol * </label>
-      <input formControlName="rol" type="text" name="rol" placeholder="Ingrese el rol a asignar" class="form-control"
+      <input formControlName="nombreROl" type="text" name="nombreROl" placeholder="Ingrese el rol a asignar" class="form-control"
         required>
     </div>
 
     <div class="col-md-5 offset-md-2"></div>
 
     <p class="form-group col-md-4">
-      <button class="btn btn-primary" type="submit">Enviar</button>
+      <button  class="btn btn-primary" type="submit">Enviar</button>
     </p>
 
   </form>

@@ -30,6 +30,13 @@ token: String = '';
       })
     } )
   }
+  CrearUsuarioRoles(usuario: ModeloUsuario): Observable<ModeloUsuario>{
+    return this.http.post<ModeloUsuario>(`${this.url}/usuarios/roles`, usuario, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    } )
+  }
 
   ActualizarUsuario(usuario: ModeloUsuario): Observable<ModeloUsuario>{
     return this.http.put<ModeloUsuario>(`${this.url}/usuarios/${usuario.id}`, usuario, {

@@ -52,7 +52,6 @@ export class SeguridadService {
     }
   }
   EliminarInformacionSesion() {
-    
     localStorage.removeItem('datosSesion')
     this.RefrescarDatosSesion(new ModeloIdentificar());
   }
@@ -72,7 +71,7 @@ export class SeguridadService {
  }
 
  CambiarClave(usuario: string): Observable<ModeloCambiarClave> {
-  return this.http.put<ModeloCambiarClave>(`${this.url}/cambiarContrasena`, {
+  return this.http.put<ModeloCambiarClave>(`${this.url}/cambiarComtrasena`, {
     usuario: usuario
   }, {
     headers: new HttpHeaders({
